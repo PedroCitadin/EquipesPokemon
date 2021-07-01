@@ -1,0 +1,18 @@
+{
+  "name": "equipespokemon",
+  "version": "1.0.0",
+  "description": "Projeto final ppw 2 - Api de equipes de pokemon",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Pedro Citadin Coelho",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.14",
+    "request": "^2.88.2",
+    "router": "^1.3.5"
+  }
+}
