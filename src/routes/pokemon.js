@@ -22,7 +22,10 @@ route.post('/', async function (req, res, next) {
             await requisicao.then(function (resposta) {
                 pkm = resposta.data
             })
-            const especie = pkm
+            const especie = {
+                id: pkm.id,
+                nome: pkm.name
+            }
             let idMovimentos = req.body.movimentos
             let movimentos = []
             if (idMovimentos.length > 4 || idMovimentos.length == 0) {
@@ -71,6 +74,12 @@ route.get('/:id', async function (req, res, next) {
             res.statusCode = 404
             throw new Error("Pokemon não encontrado!")
         }
+        let pkm
+        var requisicao = axios.get("https://pokeapi.co/api/v2/pokemon/" + docs.especie.id)
+        await requisicao.then(function (resposta) {
+            pkm = resposta.data
+        })
+        docs.especie = pkm
         docs.treinador = treina
 
         res.json(docs)

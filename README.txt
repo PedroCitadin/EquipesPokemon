@@ -37,3 +37,5 @@ As rotas estão divididas em:
 /api/pokemon - CRUD dos pokemons
 
 /api/equipe - CRUD das equipes
+
+A api está hospedada em: https://apiequipespokemon.herokuapp.com/
