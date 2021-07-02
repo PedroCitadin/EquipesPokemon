@@ -39,3 +39,51 @@ As rotas estão divididas em:
 /api/equipe - CRUD das equipes
 
 A api está hospedada em: https://apiequipespokemon.herokuapp.com/
+
+
+/api/treinador:
+
+Post deve conter:
+nome
+idade
+cidade
+estado
+pais
+
+Get pode conter o id de um treinador especifico ou irá retornar todos
+
+DELETE deve conter como parametro o id de um treindor
+
+PUT deve conter como parametro o id de um treinador e no corpo da requisição, os dados a serem alterados
+
+/api/pokemon:
+
+Post deve conter:
+nome - String
+nivel - Number
+especie - código de um pokemon na PokeAPI v2 (numero na pokedex)
+genero - String
+treinador - id de um treinador especifico
+movimentos - um array com os códigos dos movimentos de acordo com a especie na PokeAPI v2 (minimo 1 - maximo 4)
+
+Get pode conter o id de um pokemon especifico ou irá retornar todos
+
+DELETE deve conter como parametro o id de um pokemon
+
+PUT deve conter como parametro o id de um pokemon e no corpo da requisição, os dados a serem alterados
+
+/api/equipe:
+
+Post deve conter:
+nome - String
+descricao - String
+treinador - id de um treinador especifico
+pokemons - um array com os códigos dos pokemons armazenados nesta api (minimo 1 - maximo 6)
+
+Get pode conter o id de uma equipe especifica ou irá retornar todas
+
+DELETE deve conter como parametro o id de uma equipe
+
+PUT deve conter como parametro o id de uma equipe e no corpo da requisição, os dados a serem alterados
+
+
