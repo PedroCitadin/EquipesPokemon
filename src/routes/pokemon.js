@@ -8,7 +8,7 @@ route.use(express.urlencoded({ extended: true }))
 route.use(express.json())
 route.post('/', async function (req, res, next) {
     try {
-        if (req.body == null) {
+        if (req.body.nome == undefined && req.body.nivel == undefined && req.body.genero == undefined && req.body.treinador == undefined && req.body.especie == undefined && req.body.movimetos == undefined) {
             console.log(req)
             throw new Error("Requisição em branco!!")
         } else {

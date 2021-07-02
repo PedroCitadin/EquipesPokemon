@@ -4,13 +4,14 @@ const treinador = require("../models/treinador")
 const axios = require('axios').default
 route.use(express.urlencoded({ extended: true }))
 route.use(express.json())
-route.post('/', function (req, res, err) {
+route.post('/', function (req, res, next) {
     try {
-        if (req.body == null) {
+        if (req.body.nome == undefined && req.body.idade == undefined && req.body.cidade == undefined && req.body.estado == undefined && req.body.pais == undefined) {
             console.log(req)
+            console.log("aqui")
             throw new Error("Requisição em branco!!")
         } else {
-
+            console.log(req.body)
             const nome = req.body.nome
             const idade = req.body.idade
             const cidade = req.body.cidade

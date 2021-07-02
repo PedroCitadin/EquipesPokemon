@@ -10,7 +10,7 @@ route.post('/', async function (req, res, next) {
     try {
 
 
-        if (req.body == null) {
+        if (req.body.nome == undefined && req.body.treinador == undefined && req.body.descricao == undefined && req.body.pokemons == undefined) {
             console.log(req)
             throw new Error("Requisição em branco!!")
         } else {
